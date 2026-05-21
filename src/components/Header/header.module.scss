@@ -1,0 +1,47 @@
+@use "../../sass/abstracts/variables";
+
+.header {
+  margin-block: 45px 50px;
+  padding-inline: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__navigation {
+    font-size: 24px;
+
+    a:last-of-type {
+      margin-inline-start: 56px;
+    }
+
+    a:hover {
+      color: variables.$link-hover;
+    }
+
+    a.active {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
+
+@media (width < variables.$md) {
+  .header {
+    margin-block: 20px 27px;
+    padding-inline: 20px;
+
+    &__logo {
+      width: 145px;
+      height: 47px;
+    }
+
+    &__navigation {
+      font-size: 12px;
+      text-transform: uppercase;
+
+      a:last-of-type {
+        margin-inline-start: 26px;
+      }
+    }
+  }
+}

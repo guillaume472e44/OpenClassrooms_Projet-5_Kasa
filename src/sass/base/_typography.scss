@@ -1,0 +1,12 @@
+@use "../abstracts/variables";
+
+:root {
+  font-family: variables.$font-main, system-ui, "Segoe UI", sans-serif;
+  font-weight: 500;
+  line-height: 143%;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
