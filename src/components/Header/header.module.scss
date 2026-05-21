@@ -1,8 +1,7 @@
-@use "../../sass/abstracts/variables";
+@use "/src/sass/abstracts/variables";
 
 .header {
   margin-block: 45px 50px;
-  padding-inline: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +27,6 @@
 @media (width < variables.$md) {
   .header {
     margin-block: 20px 27px;
-    padding-inline: 20px;
 
     &__logo {
       width: 145px;

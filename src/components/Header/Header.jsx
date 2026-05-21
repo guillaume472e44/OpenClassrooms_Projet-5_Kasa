@@ -4,7 +4,7 @@ import classes from "./header.module.scss";
 
 export default function Header() {
   return (
-    <header className={classes.header}>
+    <header className={`${classes.header} container`}>
       <img
         src={redLogo}
         alt="logo rouge de Kasa"

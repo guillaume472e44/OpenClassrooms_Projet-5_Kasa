@@ -1,0 +1,33 @@
+@use "/src/sass/abstracts/variables";
+
+.footer {
+  background-color: variables.$black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  &__logo {
+    margin-block-start: 64px;
+  }
+
+  &__text {
+    color: variables.$white;
+    font-size: 24px;
+    margin-block-end: 32px;
+  }
+}
+
+@media (width < variables.$md) {
+  .footer {
+    gap: 12px;
+
+    &__text {
+      font-size: 12px;
+      max-width: 128px;
+      text-align: center;
+      margin-block-end: 48px;
+    }
+  }
+}
