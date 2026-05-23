@@ -1,0 +1,56 @@
+@use "/src/sass/abstracts/variables";
+
+.thumbnail {
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  position: relative;
+  isolation: isolate;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 4px 8px 0px rgba(0 0 0 / 50%);
+    transform: translateY(-1px);
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    z-index: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255 255 255 / 0%),
+      rgba(10 10 10 / 0%),
+      rgba(4 4 4 / 41%),
+      rgba(0 0 0 / 100%)
+    );
+    z-index: 1;
+  }
+
+  h2 {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 143%;
+    color: variables.$white;
+    margin: 20px;
+  }
+}
+
+@media (width < variables.$md) {
+  .thumbnail {
+    aspect-ratio: 1.3137;
+
+    h2 {
+      margin: 15px 20px;
+    }
+  }
+}

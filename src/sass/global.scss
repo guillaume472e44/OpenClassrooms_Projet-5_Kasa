@@ -1,6 +1,16 @@
 @use "./abstracts";
 @use "./base";
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
 .container {
   width: 100%;
   max-width: abstracts.$max-width;

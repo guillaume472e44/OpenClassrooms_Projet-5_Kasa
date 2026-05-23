@@ -1,0 +1,27 @@
+@use "/src/sass/abstracts/variables";
+
+.loader {
+  width: fit-content;
+  font-weight: 700;
+  font-size: 32px;
+  padding: 8px 8px;
+  margin-block: 8px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, variables.$red 50%, #0000 0) right/200% 100%;
+  animation: load 2s infinite linear;
+}
+.loader::before {
+  content: "Loading...";
+  color: #0000;
+  padding: 0 5px;
+  background: inherit;
+  background-image: linear-gradient(90deg, #fff 50%, #000 0);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes load {
+  100% {
+    background-position: left;
+  }
+}
