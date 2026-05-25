@@ -1,0 +1,50 @@
+@use "/src/sass/abstracts/variables";
+
+.error {
+  color: variables.$red;
+  text-align: center;
+  
+  h1 {
+    line-height: 100%;
+    font-size: 288px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 36px;
+    line-height: 143%;
+    margin-block-start: 32px;
+  }
+
+  a {
+    color: variables.$black;
+    text-decoration: underline;
+    font-size: 18px;
+    display: inline-block;
+    margin-block: 48px;
+
+    &:hover {
+      color: variables.$link-hover;
+    }
+  }
+}
+
+@media (width < variables.$md) {
+  .error {
+    h1 {
+      font-size: 96px;
+      margin-block: 80px;
+    }
+
+    p {
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      font-size: 14px;
+      margin-top: 96px;
+    }
+  }
+}
