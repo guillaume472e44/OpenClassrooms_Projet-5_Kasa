@@ -1,9 +1,9 @@
 import classes from "./banner.module.scss";
 
-export default function Banner({ img, title = null, shadow = false }) {
+export default function Banner({ img, title = null, className }) {
   return (
-    <div className={`${classes.bannerWrapper} ${shadow && classes.shadow}`}>
-      <img src={img} alt="image from nature" />
+    <div className={classes[className]}>
+      <img src={img} alt="image de nature" width="1240" height="223" />
       {title && <h1> {title} </h1>}
     </div>
   );

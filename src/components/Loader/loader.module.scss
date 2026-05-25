@@ -1,17 +1,20 @@
 @use "/src/sass/abstracts/variables";
 
 .loader {
-  width: fit-content;
-  font-weight: 700;
-  font-size: 32px;
-  padding: 8px 8px;
+  width: 100%;
+  max-width: fit-content;
+  margin-inline: auto;
   margin-block: 8px;
+  padding: 8px 8px;
   border-radius: 8px;
+  font-size: 32px;
+  font-weight: 700;
   background: linear-gradient(90deg, variables.$red 50%, #0000 0) right/200% 100%;
   animation: load 2s infinite linear;
 }
+
 .loader::before {
-  content: "Loading...";
+  content: "Chargement...";
   color: #0000;
   padding: 0 5px;
   background: inherit;

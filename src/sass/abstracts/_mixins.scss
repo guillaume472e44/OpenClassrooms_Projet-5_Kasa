@@ -1,0 +1,37 @@
+@use "./variables";
+
+@mixin banner($layerOpacity, $shadow: false) {
+  width: 100%;
+  height: 223px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+
+  @if $shadow {
+    box-shadow: 0 4px 4px 0 rgba(0 0 0 / 0.25);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, $layerOpacity);
+    z-index: 1;
+  }
+
+  @media (width < variables.$md) {
+    height: 111px;
+    border-radius: 10px;
+
+    @if $shadow {
+      box-shadow: none;
+    }
+  }
+}

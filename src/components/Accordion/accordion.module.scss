@@ -1,0 +1,81 @@
+@use "/src/sass/abstracts/variables";
+
+.accordion {
+  max-width: 1024px;
+  margin-inline: auto;
+  margin-block-end: 28px;
+
+  &__title {
+    background-color: variables.$red;
+    color: variables.$white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 143%;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &:hover {
+      background-color: variables.$accordion-hover;
+    }
+
+    img {
+      transition: transform 0.15s ease-out;
+    }
+    img.isOpen {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 200ms ease-out;
+
+    &.isOpen {
+      grid-template-rows: 1fr;
+    }
+
+    div {
+      overflow: hidden;
+      background-color: variables.$gray-450;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    p {
+      padding-inline: 20px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    p:first-of-type {
+      padding-block-start: 16px;
+    }
+    p:last-of-type {
+      padding-block-end: 16px;
+    }
+  }
+}
+
+@media (width < variables.$md) {
+  .accordion {
+    margin-block-end: 20px;
+
+    &__title {
+      font-size: 13px;
+      padding: 6px 8px;
+    }
+    &__title img {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__content p {
+      padding: 13px 20px;
+      font-size: 12px;
+    }
+  }
+}

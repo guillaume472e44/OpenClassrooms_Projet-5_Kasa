@@ -11,7 +11,7 @@ export default function Footer() {
         height="40"
         className={classes.footer__logo}
       />
-      <p className={classes.footer__text}>© 2020 Kasa. All rights reserved</p>
+      <p className={classes.footer__text}>© 2026 Kasa. All rights reserved</p>
     </footer>
   );
 }

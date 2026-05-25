@@ -1,31 +1,9 @@
+@use "/src/sass/abstracts/mixins";
 @use "/src/sass/abstracts/variables";
 
-.bannerWrapper {
-  width: 100%;
-  height: 233px;
-  border-radius: 25px;
-  overflow: hidden;
-  position: relative;
-  isolation: isolate;
-
-  &.shadow {
-    box-shadow: 0 4px 4px 0 rgba(0 0 0 / 0.25);
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0 0 0 / 0.6);
-    z-index: 1;
-  }
+.bannerWrapperHome {
+  @include mixins.banner(0.6, $shadow: true);
+  margin-block: 50px 43px;
 
   h1 {
     position: relative;
@@ -48,14 +26,14 @@
   }
 }
 
-@media (width < variables.$md) {
-  .bannerWrapper {
-    height: 111px;
-    border-radius: 10px;
+.bannerWrapperAbout {
+  @include mixins.banner(0.3);
+  margin-block: 38px;
+}
 
-    &.shadow {
-      box-shadow: none;
-    }
+@media (width < variables.$md) {
+  .bannerWrapperHome {
+    margin-block: 27px 22px;
 
     h1 {
       text-align: start;
@@ -65,5 +43,9 @@
       margin-inline-start: 16px;
       max-width: 225px;
     }
+  }
+
+  .bannerWrapperAbout {
+    margin-block: 20px;
   }
 }

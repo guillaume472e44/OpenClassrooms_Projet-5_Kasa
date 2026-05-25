@@ -10,7 +10,11 @@ export default function Home() {
 
   return (
     <section>
-      <Banner img={HomeBannerImg} title={bannerTitle} shadow={true} />
+      <Banner
+        img={HomeBannerImg}
+        title={bannerTitle}
+        className={"bannerWrapperHome"}
+      />
       <Suspense fallback={<Loader />}>
         <Gallery promise={getDatas()} />
       </Suspense>
