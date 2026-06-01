@@ -1,0 +1,39 @@
+@use "/src/sass/abstracts/variables";
+
+.container__top {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-block-end: 24px;
+}
+
+.hostAndRating {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  min-width: 180px;
+}
+
+.accordions {
+  display: flex;
+  gap: 86px;
+
+  div {
+    width: 100%;
+  }
+}
+
+@media (width < variables.$lg) {
+  .container__top {
+    flex-direction: column;
+  }
+  .hostAndRating {
+    flex-direction: row;
+    align-items: center;
+    margin-block-start: 16px;
+  }
+  .accordions {
+    flex-direction: column;
+    gap: 0;
+  }
+}

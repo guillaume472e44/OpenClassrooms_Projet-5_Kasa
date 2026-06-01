@@ -1,0 +1,26 @@
+@use "/src/sass/abstracts/variables";
+
+.title,
+.subtitle {
+  font-weight: 500;
+  line-height: 143%;
+}
+
+.title {
+  color: variables.$red;
+  font-size: 36px;
+}
+
+.subtitle {
+  font-size: 18px;
+}
+
+@media (width < variables.$md) {
+  .title {
+    font-size: 18px;
+    margin-block-end: 5px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+}

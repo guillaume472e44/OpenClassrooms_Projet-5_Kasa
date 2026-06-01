@@ -1,0 +1,75 @@
+@use "/src/sass/abstracts/variables";
+$border-radius: 25px;
+
+.slideshowWrapper {
+  position: relative;
+  margin-block: 50px 30px;
+  overflow-x: hidden;
+  border-radius: $border-radius;
+}
+
+.slideshow {
+  display: flex;
+  transition: transform 0.3s ease-out;
+
+  li {
+    min-width: 100%;
+    height: 415px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.controls {
+  position: absolute;
+  display: flex;
+  inset: 0;
+
+  .infoDisplay {
+    align-self: end;
+    flex-grow: 1;
+    text-align: center;
+    color: variables.$white;
+    font-variant-numeric: tabular-nums;
+    margin-block-end: 24px;
+  }
+
+  button {
+    cursor: pointer;
+    border-radius: $border-radius;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .prevBtn img {
+    transform: rotate(-90deg);
+  }
+
+  .nextBtn img {
+    transform: rotate(90deg);
+  }
+}
+
+@media (width < variables.$md) {
+  $border-radius-md: 10px;
+  .slideshowWrapper {
+    margin-block: 27px 15px;
+    border-radius: $border-radius-md;
+  }
+  .slideshow li {
+    height: 255px;
+  }
+  .controls button {
+    border-radius: $border-radius-md;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

@@ -1,15 +1,51 @@
-const url = {
-  local: "src/assets/datas/data.json",
-  backend: "http://localhost:8080/api/properties",
-  current : "local"
-};
+const currentSource = import.meta.env.VITE_DATA_SOURCE;
+const url =
+  currentSource === "JSON"
+    ? import.meta.env.VITE_JSON_URL
+    : import.meta.env.VITE_API_URL;
 
 export async function getDatas() {
   try {
-    const response = await fetch(url[url.current]);
+    const response = await fetch(url);
     if (!response.ok)
       throw new Error(`Error ${response.status}, ${response.statusText}`);
     const data = await response.json();
+    return { state: "fulfilled", data };
+  } catch (error) {
+    console.error(error.message);
+    return { state: "rejected", message: error.message };
+  }
+}
+
+export async function getDataById(id) {
+  return currentSource === "JSON" ? getJSONDataById(id) : getAPIDataById(id);
+}
+
+async function getJSONDataById(id) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok)
+      throw new Error(`Error ${response.status}, ${response.statusText}`);
+
+    const data = await response.json();
+
+    const dataFound = data.find((home) => home.id === id);
+    if (!dataFound) throw new Error("id invalid");
+
+    return { state: "fulfilled", data: dataFound };
+  } catch (error) {
+    console.error(error.message);
+    return { state: "rejected", message: error.message };
+  }
+}
+
+async function getAPIDataById(id) {
+  try {
+    const response = await fetch(`${url}/${id}`);
+    if (!response.ok)
+      throw new Error(`Error ${response.status}, ${response.statusText}`);
+    const data = await response.json();
+
     return { state: "fulfilled", data };
   } catch (error) {
     console.error(error.message);

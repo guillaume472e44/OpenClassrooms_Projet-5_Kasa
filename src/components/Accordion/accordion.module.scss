@@ -4,11 +4,12 @@
   max-width: 1024px;
   margin-inline: auto;
   margin-block-end: 28px;
+  container: accordion / inline-size;
 
   &__title {
     background-color: variables.$red;
     color: variables.$white;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 143%;
     border-radius: 8px;
@@ -17,6 +18,10 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+
+    @container accordion (width >= 568px) {
+      font-size: 24px;
+    }
 
     &:hover {
       background-color: variables.$accordion-hover;
@@ -55,7 +60,7 @@
       padding-block-start: 16px;
     }
     p:last-of-type {
-      padding-block-end: 16px;
+      padding-block-end: 20px;
     }
   }
 }
@@ -74,8 +79,13 @@
     }
 
     &__content p {
-      padding: 13px 20px;
       font-size: 12px;
+    }
+    &__content p:first-of-type {
+      padding-block-start: 13px;
+    }
+    &__content p:last-of-type {
+      padding-block-end: 19px;
     }
   }
 }

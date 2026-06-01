@@ -23,9 +23,11 @@ export default function Accordion({ title, content }) {
         className={`${classes.accordion__content} ${toggle ? classes.isOpen : ""}`}
       >
         <div>
-          {content.map((p, index) => (
-            <p key={`paragraph-${index}`}>{p}</p>
-          ))}
+          {Array.isArray(content) ? (
+            content.map((p, index) => <p key={`paragraph-${index}`}>{p}</p>)
+          ) : (
+            <p>{content}</p>
+          )}
         </div>
       </div>
     </div>

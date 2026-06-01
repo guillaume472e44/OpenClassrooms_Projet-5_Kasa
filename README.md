@@ -1,16 +1,34 @@
+![logo de Kasa](/src/assets/images/LOGO-red.svg "logo")
+
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+_React compiler n'est pas activé sur ce projet._
 
-Currently, two official plugins are available:
+## React Router
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Utilisation en "Declarative Mode".
 
-## React Compiler
+## Sass
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Le préprocesseur Sass est utilsé via Vite et sa prise en charge du format `.scss`
 
-## Expanding the ESLint configuration
+- Un fichier `.module.scss` par composant / page.
+- Un dossier _sass_ contenant les paramètres globaux (fonts, variables , mixins, reset, typographie et classes).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Back-end / data
+
+Les données des logements peuvent être récupérées de deux manières :
+
+- Depuis le fichier JSON ( /src/assets/datas/data.json )
+- Depuis l'API disponible sur [GitHub](https://github.com/OpenClassrooms-Student-Center/TesteurLogiciel_appli_location_immobiliere_React)
+
+Pour choisir la source, définir la variable **VITE_DATA_SOURCE** à **_JSON_** ou **_API_** dans le fichier `.env` :
+
+```JS
+VITE_JSON_URL="/src/assets/datas/data.json";
+VITE_API_URL="http://localhost:8080/api/properties";
+
+# valeur = "JSON" ou "API"
+VITE_DATA_SOURCE="JSON";
+```

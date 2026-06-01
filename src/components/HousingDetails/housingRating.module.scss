@@ -1,0 +1,28 @@
+@use "/src/sass/abstracts/variables";
+
+.ratingWrapper {
+  text-align: end;
+}
+
+.gray {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-image: url("/src/assets/images/star-gray.svg");
+  background-size: cover;
+}
+.red {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-image: url("/src/assets/images/star-red.svg");
+  background-size: cover;
+}
+
+@media (width < variables.$md) {
+  .gray,
+  .red {
+    width: 18px;
+    height: 18px;
+  }
+}

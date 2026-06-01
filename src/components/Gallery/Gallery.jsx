@@ -14,7 +14,7 @@ export default function Gallery({ promise }) {
           </li>
         ))
       ) : (
-        <li>⚠️ Oups... Something went wrong</li>
+        <li>⚠️ Oups... Quelque chose s'est mal passé</li>
       )}
     </ul>
   );

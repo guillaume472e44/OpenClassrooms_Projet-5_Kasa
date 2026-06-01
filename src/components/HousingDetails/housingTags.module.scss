@@ -1,0 +1,36 @@
+@use "/src/sass/abstracts/variables";
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-block-start: 20px;
+}
+
+.tag {
+  background-color: variables.$red;
+  color: variables.$white;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 115px;
+  padding-inline: 16px;
+  height: 25px;
+  border-radius: 10px;
+}
+
+@media (width < variables.$md) {
+  .tags {
+    margin-block-start: 10px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 10px;
+    min-width: 84px;
+    padding-inline: 8px;
+    height: 18px;
+    border-radius: 5px;
+  }
+}

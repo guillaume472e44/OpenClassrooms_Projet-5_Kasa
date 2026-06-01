@@ -1,0 +1,35 @@
+@use "/src/sass/abstracts/variables";
+
+.host {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+
+  &__name {
+    color: variables.$red;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 143%;
+    span {
+      display: block;
+      text-align: end;
+    }
+  }
+
+  &__picture {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+}
+
+@media (width < variables.$md) {
+  .host__name {
+    font-size: 12px;
+  }
+  .host__picture {
+    width: 32px;
+    height: 32px;
+  }
+}
