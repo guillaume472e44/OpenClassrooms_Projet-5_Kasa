@@ -1,5 +1,13 @@
 import classes from "./housingHost.module.scss";
 
+/**
+ * Propriétaire du logement
+ *
+ * @param {string} name
+ * @param {string} picture - url de l'image du proprio
+ *
+ */
+
 export default function HousingHost({ name, picture }) {
   return (
     <div className={classes.host}>

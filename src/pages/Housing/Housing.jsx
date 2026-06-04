@@ -4,6 +4,15 @@ import { getDataById } from "../../services/API/getDatas.js";
 import HousingDetails from "../../components/HousingDetails";
 import Loader from "../../components/Loader/Loader.jsx";
 
+/**
+ * Récupère, et envoie les données détaillées du logement au composant HousingDetails.
+ *
+ * Les données peuvent venir soit :
+ *  - du state passé en paramètre si on clique sur un vignette de la page d'accueil.
+ *  - de l'API si on entre l'url directement.
+ *
+ */
+
 export default function Housing() {
   const param = useParams();
   const location = useLocation();

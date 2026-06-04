@@ -17,6 +17,7 @@
 .accordions {
   display: flex;
   gap: 86px;
+  margin-block-end: 22px;
 
   div {
     width: 100%;
@@ -35,5 +36,6 @@
   .accordions {
     flex-direction: column;
     gap: 0;
+    margin-block-end: 0;
   }
 }

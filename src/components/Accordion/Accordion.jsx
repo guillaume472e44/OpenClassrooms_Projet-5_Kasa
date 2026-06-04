@@ -2,6 +2,14 @@ import { useState } from "react";
 import classes from "./accordion.module.scss";
 import chevron from "/src/assets/images/chevron.svg";
 
+/**
+ * Composant Accordéon, fermé par défaut.
+ *
+ * @param {string} title
+ * @param {(string|string[])} content - une description, ou un tableau d'équipements
+ *
+ */
+
 export default function Accordion({ title, content }) {
   const [toggle, setToggle] = useState(false);
   return (

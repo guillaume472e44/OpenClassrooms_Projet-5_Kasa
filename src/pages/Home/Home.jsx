@@ -6,13 +6,11 @@ import HomeBannerImg from "../../assets/images/banner_Home.webp";
 import Loader from "../../components/Loader/Loader.jsx";
 
 export default function Home() {
-  const bannerTitle = "Chez vous, partout et ailleurs";
-
   return (
     <section>
       <Banner
         img={HomeBannerImg}
-        title={bannerTitle}
+        title={"Chez vous, partout et ailleurs"}
         className={"bannerWrapperHome"}
       />
       <Suspense fallback={<Loader />}>

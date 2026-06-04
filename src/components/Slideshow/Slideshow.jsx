@@ -2,6 +2,20 @@ import { useState } from "react";
 import classes from "./slideshow.module.scss";
 import chevron from "../../assets/images/chevron.svg";
 
+/**
+ * Carrousel d'images.
+ *
+ * Si l'utilisateur se trouve à la première image et qu'il clique sur "Image précédente",
+ * la galerie affiche la dernière image.
+ * Inversement, quand l'image affichée est la dernière de la galerie,
+ * si l'utilisateur clique sur "Image suivante", la galerie affiche la première image.
+ *
+ * S'il n'y a qu'une seule image, les boutons "Suivant" et "Précédent" ainsi que la numérotation n'apparaissent pas.
+ *
+ * @param {string[]} pictures - les ou l'url des images.
+ *
+ */
+
 export default function Slideshow({ pictures }) {
   const [imageIndex, setImageIndex] = useState(0);
 

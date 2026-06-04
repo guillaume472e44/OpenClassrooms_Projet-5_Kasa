@@ -8,6 +8,15 @@ import HousingRating from "./HousingRating.jsx";
 import Accordion from "../Accordion/Accordion.jsx";
 import classes from "./index.module.scss";
 
+/**
+ * Reçoit les données détaillées du logement et les distribue aux composants.
+ * Renvoie à la page 404 si l'id n'est pas valide.
+ *
+ * @param {Object} linkState - vaut null si on entre l'url sans passer par la page d'accueil.
+ * @param {Promise<{Object}>} promise - vaut null si on clique sur une vignette de la page d'accueil.
+ *
+ */
+
 export default function HousingDetails({ linkState, promise }) {
   const dataSource = linkState || use(promise);
 
@@ -36,7 +45,7 @@ export default function HousingDetails({ linkState, promise }) {
 
       <div className={classes.accordions}>
         <Accordion title="Description" content={dataSource.data.description} />
-        <Accordion title="Équipement" content={dataSource.data.equipments} />
+        <Accordion title="Équipements" content={dataSource.data.equipments} />
       </div>
     </>
   );

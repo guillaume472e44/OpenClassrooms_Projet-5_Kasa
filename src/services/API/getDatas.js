@@ -1,8 +1,5 @@
-const currentSource = import.meta.env.VITE_DATA_SOURCE;
-const url =
-  currentSource === "JSON"
-    ? import.meta.env.VITE_JSON_URL
-    : import.meta.env.VITE_API_URL;
+const url = import.meta.env.VITE_JSON_URL;
+// const url = import.meta.env.VITE_API_URL;
 
 export async function getDatas() {
   try {
@@ -18,7 +15,7 @@ export async function getDatas() {
 }
 
 export async function getDataById(id) {
-  return currentSource === "JSON" ? getJSONDataById(id) : getAPIDataById(id);
+  return url.endsWith(".json") ? getJSONDataById(id) : getAPIDataById(id);
 }
 
 async function getJSONDataById(id) {

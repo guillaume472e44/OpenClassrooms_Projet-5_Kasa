@@ -19,7 +19,7 @@
     justify-content: space-between;
     cursor: pointer;
 
-    @container accordion (width >= 568px) {
+    @container accordion (width > 577px) {
       font-size: 24px;
     }
 

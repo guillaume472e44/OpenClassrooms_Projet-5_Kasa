@@ -4,7 +4,8 @@
   text-align: end;
 }
 
-.gray {
+.gray,
+.red {
   display: inline-block;
   width: 36px;
   height: 36px;
@@ -12,11 +13,7 @@
   background-size: cover;
 }
 .red {
-  display: inline-block;
-  width: 36px;
-  height: 36px;
   background-image: url("/src/assets/images/star-red.svg");
-  background-size: cover;
 }
 
 @media (width < variables.$md) {
